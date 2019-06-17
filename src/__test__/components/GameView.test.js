@@ -13,6 +13,6 @@ describe('GameView', () => {
   });
 
   it('renders the player', () => {
-    expect(wrapper.find('Player').length).toBe(1)
+    expect(wrapper.find('PlayerView').length).toBe(1)
   });
 });

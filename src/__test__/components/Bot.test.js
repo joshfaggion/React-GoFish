@@ -4,8 +4,7 @@ import Player from '../../models/Player'
 import { shallow } from 'enzyme';
 
 describe('Bot', () => {
-  let wrapper
-  let player
+  let wrapper, player
   beforeEach(() => {
     player = new Player('Darrel')
     wrapper = shallow(<Bot bot={player} />)

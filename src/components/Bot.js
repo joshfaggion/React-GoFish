@@ -6,7 +6,8 @@ import PropTypes from 'prop-types';
 
 class Bot extends React.Component {
   static propTypes = {
-    bot: PropTypes.object.isRequired
+    bot: PropTypes.object.isRequired,
+    updateCard: PropTypes.func.isRequired
   };
 
   highlightClass() {
@@ -17,7 +18,7 @@ class Bot extends React.Component {
     return (
       <div className={this.highlightClass()}>
       <u><h3>{this.props.bot.name}</h3></u>
-      <Hand cards={this.props.bot.cards} playerOrBot='bot' selectedCard={this.props.selectedCard}/>
+      <Hand updateCard={this.props.updateCard} updatePlayer={this.props.updatePlayer} cards={this.props.bot.cards} playerOrBot='bot'/>
       </div>
     )
   }
