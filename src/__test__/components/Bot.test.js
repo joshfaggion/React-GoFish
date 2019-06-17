@@ -7,7 +7,7 @@ describe('Bot', () => {
   let wrapper, player
   beforeEach(() => {
     player = new Player('Darrel')
-    wrapper = shallow(<Bot bot={player} />)
+    wrapper = shallow(<Bot bot={player} updateCard={jest.fn()} />)
   });
 
   it('renders a bot\'s title', () => {

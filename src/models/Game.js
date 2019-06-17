@@ -96,7 +96,7 @@ export default class Game {
   }
 
   loopThroughBotTurns() {
-    for (const player of this.players) {
+    for (const player of this.bots) {
       if (player.cardAmount() > 0) {
         this.runBotRound(player)
       }

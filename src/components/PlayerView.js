@@ -5,8 +5,8 @@ import Hand from './Hand'
 
 class PlayerView extends React.Component {
   static propTypes = {
-    player: PropTypes.object.isRequired,
-    updateCard: PropTypes.func.isRequired
+    player: PropTypes.object,
+    updateCard: PropTypes.func
   }
 
   render() {

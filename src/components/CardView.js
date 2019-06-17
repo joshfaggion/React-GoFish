@@ -1,23 +1,27 @@
 import React from 'react';
 import '../App.css';
 import PropTypes from 'prop-types'
+import Deck from '../models/Deck'
+import cardBack from '../img/backs_blue.png'
+
+// Creates a image hash with all the images assigned to the card's unique value
+const images = {}
+new Deck().cards().forEach((card) => {
+  images[card.value()] = require(`../img/${card.value()}.png`)
+})
 
 class CardView extends React.Component {
   static propTypes = {
     playerOrBot: PropTypes.string.isRequired,
-    card: PropTypes.object,
+    card: PropTypes.object.isRequired,
     class: PropTypes.string
   }
 
-  static cardBack() {
-    return require('../img/backs_blue.png')
-  }
-
-  value() {
+  img() {
     if (this.props.playerOrBot === 'bot') {
-      return CardView.cardBack()
+      return cardBack
     } else {
-      return require(`../img/${this.props.card.value()}.png`)
+      return images[this.props.card.value()]
     }
   }
 
@@ -29,7 +33,7 @@ class CardView extends React.Component {
 
   render() {
     return (
-      <img id={this.props.card} onClick={this.updateCard.bind(this, this.props.card)} className={this.props.class} src={this.value()} alt='back of a card' />
+      <img onClick={this.updateCard.bind(this, this.props.card)} className={this.props.class} src={this.img()} alt='back of a card' />
     )
   }
 }

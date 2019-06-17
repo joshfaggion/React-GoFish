@@ -8,26 +8,31 @@ class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      game: 'login'
+      currentView: 'login',
+      game: ''
     }
   }
 
   onLogin(name) {
-    this.setState({game: 'game', name: name})
+    this.setState({currentView: 'game', name: name})
+  }
+
+  onEndGame(game) {
+    this.setState({currentView: 'endGame', game: game})
   }
 
   render() {
-    if (this.state.game === 'login') {
+    if (this.state.currentView === 'login') {
       return (
         <Login onLogin={this.onLogin.bind(this)} />
       );
-    } else if (this.state.game === 'game') {
+    } else if (this.state.currentView === 'game') {
       return (
-        <GameView name={this.state.name} />
+        <GameView onEndGame={this.onEndGame.bind(this)} name={this.state.name} />
       );
     } else {
       return (
-        <EndGame onLogin={this.onLogin.bind(this)} />
+        <EndGame game={this.state.game}/>
       );
     }
   }

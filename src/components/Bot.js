@@ -8,7 +8,7 @@ class Bot extends React.Component {
   static propTypes = {
     bot: PropTypes.object.isRequired,
     updateCard: PropTypes.func.isRequired,
-    class: PropTypes.string.isRequired
+    class: PropTypes.string
   };
 
   updatePlayer() {

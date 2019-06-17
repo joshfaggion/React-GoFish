@@ -8,13 +8,14 @@ class Hand extends React.Component {
     cards: PropTypes.array.isRequired,
     playerOrBot: PropTypes.string.isRequired,
     selectedCard: PropTypes.string,
-    updateCard: PropTypes.func.isRequired
+    updateCard: PropTypes.func
   };
 
   highlightClass(card) {
     if (this.props.selectedCard === card.returnRank()) {
       return 'card selected'
     }
+    return 'card'
   }
 
   render() {

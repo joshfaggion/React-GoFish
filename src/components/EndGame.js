@@ -2,10 +2,10 @@ import React from 'react';
 import '../App.css';
 
 class EndGame extends React.Component {
-  constructor(game) {
-    super(game)
+  constructor(props) {
+    super(props)
     this.state = {
-      game: ''
+      game: props.game
     }
   }
 
