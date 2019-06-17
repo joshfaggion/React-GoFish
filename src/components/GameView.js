@@ -38,6 +38,11 @@ class GameView extends React.Component {
   requestCard() {
     const result = this.state.game.runPlayerRound(this.state.selectedPlayer, this.state.selectedCard)
     if (result.includes('fishing') || this.state.game.player.cardAmount() === 0) {
+      if (this.state.game.player.cardAmount() === 0) {
+        while (this.state.game.anyPlayersHaveCards() === false) {
+          this.state.game.runAllBotTurns()
+        }
+      }
       this.state.game.runAllBotTurns()
     }
     if (this.state.game.anyPlayersHaveCards() === false) {
