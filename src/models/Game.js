@@ -79,6 +79,13 @@ export default class Game {
     return result
   }
 
+  runRound(selectedPlayer, selectedCard) {
+    const result = this.runPlayerRound(selectedPlayer, selectedCard)
+    if (result.includes('fishing') || this.player.cardAmount() === 0) {
+      this.runAllBotTurns()
+    }
+  }
+
   updateGameLog(result) {
     this.log.push(result)
     if (this.log.length > 10) {
@@ -109,8 +116,9 @@ export default class Game {
       while (this.anyPlayersHaveCards()) {
         this.loopThroughBotTurns()
       }
+    } else {
+      this.loopThroughBotTurns()
     }
-    this.loopThroughBotTurns()
   }
 
   gameLog() {
