@@ -20,19 +20,24 @@ class GameView extends React.Component {
   };
 
   updateCard(card) {
-    console.log(`Let's update the card's with ${card.returnRank()}`)
     this.setState({selectedCard: card.returnRank()})
   }
 
   updatePlayer(player) {
-    console.log(`Let's update the card's with ${player.name}`)
     this.setState({selectedPlayer: player.name})
+  }
+
+  highlightBot(bot) {
+    if (this.state.selectedPlayer === bot.name) {
+      return 'selected bot-div'
+    }
+    return 'bot-div'
   }
 
   render() {
     return (
       <div>
-        {this.state.game.bots.map((bot, index) => <Bot updateCard={this.updateCard.bind(this)} updatePlayer={this.updatePlayer.bind(this)} key={index} bot={bot} selectedPlayer={this.state.selectedPlayer}  selectedCard={this.state.selectedCard} />)}
+        {this.state.game.bots.map((bot, index) => <Bot class={this.highlightBot(bot)} updateCard={this.updateCard.bind(this)} updatePlayer={this.updatePlayer.bind(this)} key={index} bot={bot} selectedPlayer={this.state.selectedPlayer}  selectedCard={this.state.selectedCard} />)}
         <PlayerView updateCard={this.updateCard.bind(this)} updatePlayer={this.updatePlayer.bind(this)} selectedCard={this.state.selectedCard} player={this.state.game.player}/>
       </div>
     )

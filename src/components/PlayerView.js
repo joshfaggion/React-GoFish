@@ -12,8 +12,8 @@ class PlayerView extends React.Component {
   render() {
     return (
       <div className='player-div'>
-      <u><h3>{this.props.player.name}</h3></u>
-      <Hand updateCard={this.props.updateCard} updatePlayer={this.props.updatePlayer} cards={this.props.player.cards} playerOrBot='player' selectedCard={this.props.selectedCard}/>
+        <u><h3>{this.props.player.name}</h3></u>
+        <Hand updateCard={this.props.updateCard} cards={this.props.player.cards} playerOrBot='player' selectedCard={this.props.selectedCard}/>
       </div>
     )
   }

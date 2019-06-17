@@ -25,20 +25,23 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .selected {
   border: 2px solid #e8e40d;
   border-radius:7px;
   margin-bottom: 10px;
   max-width: inherit;
+}
+
+.bot-div {
+  padding: 10px 10px 10px 30px;
+  text-align: center;
+  max-width: 100rem;
+}
+
+.player-div {
+  padding: 10px 10px 10px 30px;
+  text-align: center;
+  max-width: 100rem;
 }
 
 img {

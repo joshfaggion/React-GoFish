@@ -7,18 +7,19 @@ import PropTypes from 'prop-types';
 class Bot extends React.Component {
   static propTypes = {
     bot: PropTypes.object.isRequired,
-    updateCard: PropTypes.func.isRequired
+    updateCard: PropTypes.func.isRequired,
+    class: PropTypes.string.isRequired
   };
 
-  highlightClass() {
-    return 'bot-div'
+  updatePlayer() {
+    this.props.updatePlayer(this.props.bot)
   }
 
   render() {
     return (
-      <div className={this.highlightClass()}>
-      <u><h3>{this.props.bot.name}</h3></u>
-      <Hand updateCard={this.props.updateCard} updatePlayer={this.props.updatePlayer} cards={this.props.bot.cards} playerOrBot='bot'/>
+      <div className={this.props.class} onClick={this.updatePlayer.bind(this)}>
+        <u><h3>{this.props.bot.name}</h3></u>
+        <Hand updateCard={this.props.updateCard} cards={this.props.bot.cards} playerOrBot='bot'/>
       </div>
     )
   }
