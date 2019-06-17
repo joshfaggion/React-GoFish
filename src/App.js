@@ -3,6 +3,7 @@ import './App.css';
 import Login from './components/Login.js'
 import GameView from './components/GameView'
 import EndGame from './components/EndGame'
+import Game from './models/Game'
 
 class App extends React.Component {
   constructor() {
@@ -31,6 +32,7 @@ class App extends React.Component {
         <GameView onEndGame={this.onEndGame.bind(this)} name={this.state.name} />
       );
     } else {
+
       return (
         <EndGame game={this.state.game}/>
       );

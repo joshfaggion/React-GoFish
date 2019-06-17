@@ -25,6 +25,31 @@
   color: #61dafb;
 }
 
+.request-button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  padding: 16px 32px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+  color: white;
+  border: 2px solid #4CAF50;
+  border-radius: 8px;
+}
+
+.request-button:hover {
+  background-color: white;
+  color: black;
+}
+
+.matched-card {
+  width: 50px;
+}
+
 .selected {
   border: 2px solid #e8e40d;
   border-radius:7px;

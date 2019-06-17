@@ -1,16 +1,20 @@
 import React from 'react';
 import '../App.css';
+import PropTypes from 'prop-types'
 
 class EndGame extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      game: props.game
-    }
-  }
+
+static propTypes = {
+  game: PropTypes.object.isRequired
+}
 
   render() {
-    return <h1>This is the EndGame component!</h1>
+    return (
+      <div>
+      {this.props.game.players.map((player, index) => <div key={index}><h3>{player.name} had {player.points} points!</h3></div>)}
+      <h2>Congrats {this.props.game.winner()}!</h2>
+      </div>
+    )
   }
 }
 

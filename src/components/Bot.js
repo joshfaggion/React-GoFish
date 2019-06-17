@@ -2,6 +2,7 @@ import React from 'react';
 import '../App.css';
 import Hand from './Hand'
 import PropTypes from 'prop-types';
+import CardView from './CardView'
 
 
 class Bot extends React.Component {
@@ -12,7 +13,9 @@ class Bot extends React.Component {
   };
 
   updatePlayer() {
-    this.props.updatePlayer(this.props.bot)
+    if (this.props.playerOrBot !== 'match') {
+      this.props.updatePlayer(this.props.bot)
+    }
   }
 
   render() {
@@ -20,6 +23,7 @@ class Bot extends React.Component {
       <div className={this.props.class} onClick={this.updatePlayer.bind(this)}>
         <u><h3>{this.props.bot.name}</h3></u>
         <Hand updateCard={this.props.updateCard} cards={this.props.bot.cards} playerOrBot='bot'/>
+        {this.props.bot.matches().map((match, index) => <CardView key={index} playerOrBot='match' card={match} />)}
       </div>
     )
   }
