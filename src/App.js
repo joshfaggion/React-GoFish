@@ -1,26 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Login from './components/Login.js'
+import GameView from './components/GameView'
+import EndGame from './components/EndGame'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      game: 'login'
+    }
+  }
+
+  onLogin(name) {
+    this.setState({game: 'game', name: name})
+  }
+
+  render() {
+    if (this.state.game === 'login') {
+      return (
+        <Login onLogin={this.onLogin.bind(this)} />
+      );
+    } else if (this.state.game === 'game') {
+      return (
+        <GameView name={this.state.name} />
+      );
+    } else {
+      return (
+        <EndGame onLogin={this.onLogin.bind(this)} />
+      );
+    }
+  }
 }
 
 export default App;
