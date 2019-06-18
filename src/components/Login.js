@@ -24,11 +24,13 @@ class Login extends React.Component {
 
   render() {
     return (
-      <form className="user-form">
-        <label htmlFor="name">Name</label>
-        <input onChange={(e) => this.updateName(e)} type="text" id="name" />
-        <input onClick={(e) => this.onSubmit(e)} id="submit" type="submit" value="Login" />
-      </form>
+      <div className='user-form'>
+        <form className='form'>
+          <label htmlFor="name">Name</label>
+          <input onChange={(e) => this.updateName(e)} type="text" id="name" />
+          <input onClick={(e) => this.onSubmit(e)} id="submit" type="submit" value="Login" />
+        </form>
+      </div>
     );
   }
 }

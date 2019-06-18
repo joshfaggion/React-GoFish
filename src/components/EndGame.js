@@ -14,10 +14,10 @@ class EndGame extends React.Component {
 
   render() {
     return (
-      <div>
-      {this.props.game.players.map((player, index) => <div key={index}><h3>{player.name} had {player.points} points!</h3></div>)}
-      <h2>Congrats {this.props.game.winner()}!</h2>
-      <button onClick={this.windowReload.bind(this)} className='request-button'>Play Again?</button>
+      <div className='user-form'>
+        {this.props.game.players.map((player, index) => <div key={index}><h3>{player.name} had {player.points} points!</h3></div>)}
+        <h2>Congrats {this.props.game.winner()}!</h2>
+        <button onClick={this.windowReload.bind(this)} className='request-button'>Play Again?</button>
       </div>
     )
   }

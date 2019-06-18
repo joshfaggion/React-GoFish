@@ -1,32 +1,21 @@
-.App {
-  text-align: center;
-  display: table-cell;
-  vertical-align: middle;
+
+img {
+  margin-left: -30px;
+  width: 60px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+html {
+  display: table;
+  margin: auto;
+  background-color: #F0F7D4;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
+.user-form {
+  margin-top: 130%;
 }
 
 .request-button {
-  background-color: #4CAF50; /* Green */
+  background-color: #66B032; /* Green */
   padding: 16px 32px;
   text-decoration: none;
   display: inline-block;
@@ -53,7 +42,7 @@
 }
 
 .request-button:hover {
-  background-color: white;
+  background-color: #B2D732;
   color: black;
 }
 
@@ -86,19 +75,9 @@
   display: inline-block;
   position: fixed;
   left: 10px;
-  bottom: 25%;
+  bottom: 5%;
   border-radius: 15px;
-  border: 4px solid #467edb;
-  background-color: #8bade5;
+  border: 4px solid #66B032;
+  background-color: #B2D732;
   padding: 5px 5px 10px 10px;
-}
-
-img {
-  margin-left: -30px;
-  width: 60px;
-}
-
-html {
-    display: table;
-    margin: auto;
 }
