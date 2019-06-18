@@ -42,7 +42,7 @@
 
 .centered-wrapper {
   display: flex;
-  justify-content: center;;
+  justify-content: space-around;
 }
 
 .bots {
@@ -77,13 +77,8 @@
 }
 
 .player-div {
-  padding: 10px 10px 10px 30px;
   text-align: center;
   max-width: 50rem;
-}
-
-#log {
-  margin-bottom: 3px;
 }
 
 .game-log {
@@ -95,7 +90,7 @@
   border-radius: 15px;
   border: 4px solid #467edb;
   background-color: #8bade5;
-  padding: 5px 10px 10px 10px;
+  padding: 5px 5px 10px 10px;
 }
 
 img {

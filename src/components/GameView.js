@@ -63,7 +63,7 @@ class GameView extends React.Component {
         <div className='centered-wrapper'>
           {this.middleOfDeck()}
         </div>
-        <PlayerView updateCard={this.updateCard.bind(this)} updatePlayer={this.updatePlayer.bind(this)} selectedCard={this.state.selectedCard} player={this.state.game.player}/>
+        <div className='centered-wrapper'><PlayerView updateCard={this.updateCard.bind(this)} updatePlayer={this.updatePlayer.bind(this)} selectedCard={this.state.selectedCard} player={this.state.game.player}/> </div>
         <div className='centered-wrapper'>
           {this.requestButton()}
         </div>
