@@ -1,7 +1,6 @@
 import Player from './Player'
 import Deck from './Deck'
 import Names from '../components/Names'
-import Card from './Card'
 
 export default class Game {
   constructor(playerName) {
@@ -31,7 +30,7 @@ export default class Game {
     if (this.deck.cardAmount() > 0) {
       requestingPlayer.takeCard(this.deck.topCard())
     }
-    return `${requestingPlayer.returnName()} went fishing!`
+    return `${requestingPlayer.returnName()} asked for ${requestedRank}'s from ${targetPlayer.returnName()}, but went fishing!`
   }
 
   findPlayerByName(name) {
@@ -146,6 +145,8 @@ export default class Game {
     this.players.forEach((player) => {
       if (player.returnPoints() > winnersPoints) {
         [winnersPoints, winner] = [player.returnPoints(), player.returnName()]
+      } else if (player.returnPoints() === winnersPoints) {
+        winner = [player.returnName(), winner]
       }
     })
     return winner

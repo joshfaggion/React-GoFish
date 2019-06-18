@@ -30,7 +30,8 @@ describe('Game', () => {
       bot.setHand(card2)
       const result = game.runRequest(player, bot, '10')
       expect(player.cardAmount()).toEqual(2)
-      expect(result).toEqual(`Jimmy took all the 10's from ${bot.returnName()}!`)
+      expect(result).toContain(player.returnName())
+
     });
 
     it('should return Go Fish! if no card was found and give consolation card', () => {
@@ -39,7 +40,8 @@ describe('Game', () => {
       player.setHand(card1)
       bot.setHand(card2)
       const result = game.runRequest(player, bot, 'j')
-      expect(result).toEqual('Jimmy went fishing!')
+      expect(result).toContain(`fishing`)
+      expect(result).toContain(player.returnName())
       expect(player.cardAmount()).toEqual(2)
     });
   });
