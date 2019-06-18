@@ -13,15 +13,15 @@ new Deck().cards().forEach((card) => {
 class CardView extends React.Component {
   static propTypes = {
     playerOrBot: PropTypes.string.isRequired,
-    card: PropTypes.object.isRequired,
+    card: PropTypes.object,
     class: PropTypes.string
   }
 
   img() {
-    if (this.props.playerOrBot === 'bot') {
-      return cardBack
-    } else {
+    if (this.props.playerOrBot === 'player' || this.props.playerOrBot === 'match') {
       return images[this.props.card.value()]
+    } else {
+      return cardBack
     }
   }
 

@@ -27,7 +27,6 @@
 
 .request-button {
   background-color: #4CAF50; /* Green */
-  border: none;
   padding: 16px 32px;
   text-decoration: none;
   display: inline-block;
@@ -39,6 +38,18 @@
   color: white;
   border: 2px solid #4CAF50;
   border-radius: 8px;
+}
+
+.centered-wrapper {
+  display: flex;
+  justify-content: center;;
+}
+
+.bots {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  flex-wrap: nowrap;
 }
 
 .request-button:hover {
@@ -59,6 +70,8 @@
 
 .bot-div {
   padding: 10px 10px 10px 30px;
+  margin-left: 20px;
+  margin-right: 20px;
   text-align: center;
   max-width: 100rem;
 }

@@ -15,7 +15,7 @@ class PlayerView extends React.Component {
       <div className='player-div'>
         <u><h3>{this.props.player.name}</h3></u>
         <Hand updateCard={this.props.updateCard} cards={this.props.player.cards} playerOrBot='player' selectedCard={this.props.selectedCard}/>
-        {this.props.player.matches().map((match, index) => <CardView key={index} playerOrBot='match' card={match} />)}
+        {this.props.player.matches().map((match, index) => <CardView class='matched-card' key={index} playerOrBot='match' card={match} />)}
       </div>
     )
   }

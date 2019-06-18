@@ -4,6 +4,7 @@ import Game from '../models/Game'
 import Bot from './Bot'
 import PropTypes from 'prop-types'
 import PlayerView from './PlayerView'
+import CardView from './CardView'
 
 class GameView extends React.Component {
   constructor(props) {
@@ -35,6 +36,12 @@ class GameView extends React.Component {
     return 'bot-div'
   }
 
+  middleOfDeck() {
+    if (this.state.game.deck.cardAmount() !== 0) {
+      return <CardView className='deck' playerOrBot='deck' />
+    }
+  }
+
   requestCard() {
     this.state.game.runRound(this.state.selectedPlayer, this.state.selectedCard)
     if (this.state.game.anyPlayersHaveCards() === false) {
@@ -52,9 +59,14 @@ class GameView extends React.Component {
   render() {
     return (
       <div>
-        {this.state.game.bots.map((bot, index) => <Bot class={this.highlightBot(bot)} updateCard={this.updateCard.bind(this)} updatePlayer={this.updatePlayer.bind(this)} key={bot.name} bot={bot} selectedPlayer={this.state.selectedPlayer}  selectedCard={this.state.selectedCard} />)}
+        <div className='bots'>{this.state.game.bots.map((bot, index) => <Bot class={this.highlightBot(bot)} updateCard={this.updateCard.bind(this)} updatePlayer={this.updatePlayer.bind(this)} key={bot.name} bot={bot} selectedPlayer={this.state.selectedPlayer}  selectedCard={this.state.selectedCard} />)}</div>
+        <div className='centered-wrapper'>
+          {this.middleOfDeck()}
+        </div>
         <PlayerView updateCard={this.updateCard.bind(this)} updatePlayer={this.updatePlayer.bind(this)} selectedCard={this.state.selectedCard} player={this.state.game.player}/>
-        {this.requestButton()}
+        <div className='centered-wrapper'>
+          {this.requestButton()}
+        </div>
         <div className='game-log'>
           <h3>Game Log:</h3>
           {this.state.game.gameLog().map((log, index) => <h5 key={index}>{log}</h5>)}

@@ -23,7 +23,7 @@ class Bot extends React.Component {
       <div className={this.props.class} onClick={this.updatePlayer.bind(this)}>
         <u><h3>{this.props.bot.name}</h3></u>
         <Hand updateCard={this.props.updateCard} cards={this.props.bot.cards} playerOrBot='bot'/>
-        {this.props.bot.matches().map((match, index) => <CardView key={index} playerOrBot='match' card={match} />)}
+        {this.props.bot.matches().map((match, index) => <CardView class='matched-card' key={index} playerOrBot='match' card={match} />)}
       </div>
     )
   }
