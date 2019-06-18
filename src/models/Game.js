@@ -30,7 +30,7 @@ export default class Game {
     if (this.deck.cardAmount() > 0) {
       requestingPlayer.takeCard(this.deck.topCard())
     }
-    return `${requestingPlayer.returnName()} asked for ${requestedRank}'s from ${targetPlayer.returnName()}, but went fishing!`
+    return `${requestingPlayer.returnName()} asked for ${requestedRank}'s, but went fishing!`
   }
 
   findPlayerByName(name) {
