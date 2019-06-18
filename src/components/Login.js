@@ -31,12 +31,12 @@ class Login extends React.Component {
             <input onChange={(e) => this.updateName(e)} type="text" id="name" />
             <input onClick={(e) => this.onSubmit(e)} id="submit" type="submit" value="Login" />
           </form>
+          <h5><u>Instructions:</u></h5>
+          <p>
+          Click on a card and opposing player, and then click on the request card button to request a card.
+          The bots will run automatically. Look at the game log to see all player's requests.
+          </p>
         </div>
-        <h5><u>Instructions:</u></h5>
-        <p>
-        Click on a card and opposing player, and then click on the request card button to request a card.
-        The bots will run automatically. Look at the game log to see all player's requests.
-        </p>
       </div>
     );
   }
