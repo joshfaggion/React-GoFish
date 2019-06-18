@@ -44,7 +44,7 @@ describe('Game', () => {
     });
   });
 
-  describe('runRound', () => {
+  describe('runPlayerRound', () => {
     let game, firstBotIndex, bot, player
     beforeEach(() => {
       game = new Game('Donald')
@@ -70,4 +70,12 @@ describe('Game', () => {
       expect(bot.cardAmount()).toBeGreaterThan(5)
     });
   });
+
+  // describe('end game', () => {
+  //   it('can avoid the evil bug', () => {
+  //     const game = new Game('Carl')
+  //     game.setUpBug()
+  //     expect(game.anyPlayersHaveCards()).toBe(false)
+  //   });
+  // });
 });

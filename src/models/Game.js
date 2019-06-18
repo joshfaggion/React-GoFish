@@ -1,6 +1,7 @@
 import Player from './Player'
 import Deck from './Deck'
 import Names from '../components/Names'
+import Card from './Card'
 
 export default class Game {
   constructor(playerName) {
@@ -76,6 +77,7 @@ export default class Game {
     const result = this.runRequest(botDecision[0], botDecision[1], botDecision[2])
     this.updateGameLog(result)
     player.pairCards()
+    this.cardRefills()
     return result
   }
 
@@ -110,6 +112,7 @@ export default class Game {
     }
   }
 
+
   runAllBotTurns() {
     const user = this.player
     if (user.cardAmount() === 0) {
@@ -118,6 +121,9 @@ export default class Game {
       }
     } else {
       this.loopThroughBotTurns()
+      if (user.cardAmount() === 0) {
+        this.runAllBotTurns()
+      }
     }
   }
 

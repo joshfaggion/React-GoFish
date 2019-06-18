@@ -29,6 +29,10 @@ class GameView extends React.Component {
     this.setState({selectedPlayer: player.name})
   }
 
+  game() {
+    return this.state.game
+  }
+
   highlightBot(bot) {
     if (this.state.selectedPlayer === bot.name) {
       return 'selected bot-div'

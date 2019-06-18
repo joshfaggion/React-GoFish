@@ -23,7 +23,7 @@ describe('GameView', () => {
       card = wrapper.find('.card').last()
       bot = wrapper.find('.bot-div').first()
     });
-    
+
     it('can highlight a card on click', () => {
       card.simulate('click')
       expect(card.html()).toContain('selected')
