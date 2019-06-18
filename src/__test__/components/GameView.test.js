@@ -30,12 +30,6 @@ describe('GameView', () => {
       wrapper.unmount()
     });
 
-    it('can highlight a title on click', () => {
-      bot.simulate('click')
-      expect(bot.html()).toContain('selected')
-      wrapper.unmount()
-    });
-
     it('can run a request', () => {
       bot.simulate('click')
       card.simulate('click')
